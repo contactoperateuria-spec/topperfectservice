@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Top Perfect Service – Lomé</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap">
+<style>
+/* ─── Tokens ─── */
+:root {
+  --steel: #1B3A5C;
+  --steel-light: #244d7a;
+  --steel-border: #2d5e92;
+  --teal: #0E8A7A;
+  --teal-hover: #0b7468;
+  --teal-light: #E0F5F3;
+  --pipe: #B0C4D8;
+  --bg: #F2F6FA;
+  --surface: #FFFFFF;
+  --text: #0f1f33;
+  --text-secondary: #4a6080;
+  --border: #D8E4EF;
+  --red: #C62828;
+  --red-light: #FFEBEE;
+  --yellow: #F9A825;
+  --yellow-light: #FFF8E1;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 12px rgba(27,58,92,0.08);
+  --shadow-card: 0 6px 28px rgba(27,58,92,0.14);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --steel: #1e3f63;
+    --steel-light: #244d7a;
+    --steel-border: #2d5e92;
+    --bg: #0a1520;
+    --surface: #111e2e;
+    --text: #ddeaf8;
+    --text-secondary: #7a9bbf;
+    --border: #1e3350;
+    --teal-light: #06201d;
+    --red-light: #220a0a;
+    --yellow-light: #1e1500;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --steel: #1e3f63;
+  --steel-light: #244d7a;
+  --steel-border: #2d5e92;
+  --bg: #0a1520;
+  --surface: #111e2e;
+  --text: #ddeaf8;
+  --text-secondary: #7a9bbf;
+  --border: #1e3350;
+  --teal-light: #06201d;
+  --red-light: #220a0a;
+  --yellow-light: #1e1500;
+  color-scheme: dark;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px));
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ─── Header ─── */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--steel);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 4px 20px rgba(0,0,0,0.35);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; height: 60px;
+  max-width: 680px; margin: 0 auto;
+}
+.logo { display: flex; align-items: center; gap: 10px; color: #fff; }
+.logo-img {
+  height: 42px; width: auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 2px;
+  object-fit: contain;
+}
+.logo-text { line-height: 1.2; }
+.logo-name { font-weight: 800; font-size: 14.5px; letter-spacing: 0.2px; }
+.logo-sub { font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.55; }
+.header-cta {
+  background: var(--teal); color: #fff;
+  font-weight: 700; font-size: 13px;
+  padding: 8px 16px; border-radius: 8px;
+  display: flex; align-items: center; gap: 6px;
+  transition: background .2s;
+}
+.header-cta:hover { background: var(--teal-hover); }
+.header-cta svg { width: 15px; height: 15px; }
+
+/* ─── Urgency banner ─── */
+.urgency-banner {
+  background: var(--red);
+  color: #fff;
+  text-align: center;
+  font-size: 12px; font-weight: 600;
+  padding: 8px 20px;
+  letter-spacing: 0.3px;
+}
+.urgency-banner a { color: #ffcdd2; text-decoration: underline; }
+
+/* ─── Section wrapper ─── */
+.section { padding: 52px 0; }
+.section-inner { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(22px, 5vw, 30px);
+  color: var(--text); line-height: 1.25; margin-bottom: 6px;
+  text-wrap: balance;
+}
+.section-sub { color: var(--text-secondary); font-size: 14px; margin-bottom: 28px; }
+
+/* ─── Hero ─── */
+#accueil { background: var(--steel); color: #fff; padding: 0; }
+.hero-inner { max-width: 680px; margin: 0 auto; padding: 44px 20px 0; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(14,138,122,0.2); border: 1px solid rgba(14,138,122,0.35);
+  color: #6ecfc6; font-size: 11px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 100px; margin-bottom: 18px;
+}
+.hero-eyebrow::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--teal); border-radius: 50%;
+}
+.hero-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(26px, 6.5vw, 40px); font-weight: 400;
+  line-height: 1.2; text-wrap: balance; margin-bottom: 14px; color: #fff;
+}
+.hero-title em { font-style: italic; color: #6ecfc6; }
+.hero-desc {
+  color: rgba(255,255,255,0.62); font-size: 14.5px; line-height: 1.7;
+  margin-bottom: 28px; max-width: 440px;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+.btn-primary {
+  background: var(--teal); color: #fff; font-weight: 700; font-size: 14px;
+  padding: 13px 22px; border-radius: var(--radius-sm);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background .2s, transform .15s;
+}
+.btn-primary:hover { background: var(--teal-hover); transform: translateY(-1px); }
+.btn-outline {
+  background: transparent; color: #fff; font-weight: 600; font-size: 14px;
+  padding: 12px 20px; border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(255,255,255,0.28);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: border-color .2s, background .2s;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.07); }
+.btn-icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* Shortcuts */
+.shortcuts {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.shortcut {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius); padding: 13px 6px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  cursor: pointer; transition: background .2s, border-color .2s;
+  text-decoration: none;
+}
+.shortcut:hover { background: rgba(255,255,255,0.1); border-color: rgba(14,138,122,0.4); }
+.sc-badge {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.sc-teal { background: var(--teal); }
+.sc-steel { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12); }
+.sc-badge svg { width: 18px; height: 18px; color: #fff; }
+.shortcut-label { font-size: 10.5px; font-weight: 600; color: rgba(255,255,255,0.7); text-align: center; line-height: 1.3; }
+
+/* Stats strip */
+.stats-strip { background: var(--steel-light); border-top: 1px solid var(--steel-border); }
+.stats-inner { max-width: 680px; margin: 0 auto; display: flex; padding: 18px 20px; }
+.stat { flex: 1; text-align: center; border-right: 1px solid var(--steel-border); padding: 4px 6px; }
+.stat:last-child { border-right: none; }
+.stat-num { font-size: 22px; font-weight: 800; color: var(--teal); line-height: 1; margin-bottom: 3px; }
+.stat-label { font-size: 10px; color: rgba(255,255,255,0.5); font-weight: 500; }
+
+/* ─── Services urgence ─── */
+.urgent-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;
+}
+.urgent-card {
+  background: var(--red-light);
+  border: 1.5px solid rgba(198,40,40,0.18);
+  border-radius: var(--radius); padding: 16px 14px;
+  display: flex; gap: 12px; align-items: flex-start;
+  transition: box-shadow .2s;
+}
+.urgent-card:hover { box-shadow: var(--shadow-card); }
+.uc-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(198,40,40,0.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.uc-icon svg { width: 20px; height: 20px; color: var(--red); }
+.uc-title { font-weight: 700; font-size: 13px; margin-bottom: 3px; color: var(--text); }
+.uc-label { font-size: 10.5px; color: var(--red); font-weight: 600; }
+
+/* ─── Services cards ─── */
+#services { background: var(--surface); }
+.services-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px;
+}
+.service-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px 14px;
+  transition: box-shadow .2s, transform .2s;
+}
+.service-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.svc-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 12px;
+}
+.svc-steel { background: var(--steel); }
+.svc-teal { background: var(--teal); }
+.svc-yellow { background: var(--yellow); }
+.svc-icon svg { width: 22px; height: 22px; color: #fff; }
+.svc-title { font-weight: 700; font-size: 13.5px; margin-bottom: 6px; color: var(--text); }
+.svc-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 12px; }
+.svc-link { font-size: 12.5px; font-weight: 700; color: var(--teal); display: inline-flex; align-items: center; gap: 3px; }
+.svc-link::after { content: '→'; }
+
+.btn-full {
+  display: flex; width: 100%; align-items: center; justify-content: center;
+  gap: 8px; background: var(--teal); color: #fff;
+  font-weight: 700; font-size: 15px; padding: 15px;
+  border-radius: var(--radius-sm); transition: background .2s;
+}
+.btn-full:hover { background: var(--teal-hover); }
+
+/* ─── Atelier section ─── */
+#atelier { background: var(--bg); }
+.atelier-hero {
+  background: linear-gradient(135deg, var(--steel) 0%, #0d2b45 100%);
+  border-radius: 16px; padding: 32px 24px; margin-bottom: 24px;
+  position: relative; overflow: hidden;
+}
+.atelier-hero::before {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 150px; height: 150px;
+  background: var(--teal); opacity: 0.08;
+  border-radius: 50%;
+}
+.atelier-hero::after {
+  content: '';
+  position: absolute; bottom: -50px; right: 30px;
+  width: 100px; height: 100px;
+  background: var(--teal); opacity: 0.05;
+  border-radius: 50%;
+}
+.atelier-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: #6ecfc6; margin-bottom: 10px;
+}
+.atelier-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(18px, 4.5vw, 24px); color: #fff;
+  margin-bottom: 16px; line-height: 1.3;
+}
+.atelier-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.atelier-features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  color: rgba(255,255,255,0.8); font-size: 13.5px;
+}
+.atelier-features li::before {
+  content: '';
+  width: 20px; height: 20px; border-radius: 6px;
+  background: rgba(14,138,122,0.25); border: 1px solid rgba(14,138,122,0.4);
+  flex-shrink: 0; margin-top: 1px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230E8A7A' stroke-width='3' stroke-linecap='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center;
+}
+
+.atelier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.atelier-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px 14px;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.at-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--teal-light);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.at-icon svg { width: 18px; height: 18px; color: var(--teal); }
+.at-title { font-weight: 700; font-size: 12.5px; margin-bottom: 2px; color: var(--text); }
+.at-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.45; }
+
+/* ─── Réalisations ─── */
+#realisations { background: var(--surface); }
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; align-items: center; }
+.filter-count { margin-left: auto; font-size: 12px; color: var(--text-secondary); font-weight: 500; white-space: nowrap; }
+.pill {
+  background: var(--bg); border: 1.5px solid var(--border);
+  color: var(--text-secondary); font-size: 13px; font-weight: 600;
+  padding: 7px 16px; border-radius: 100px; cursor: pointer; transition: all .15s; white-space: nowrap;
+}
+.pill:hover { border-color: var(--teal); color: var(--teal); }
+.pill.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.proj-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.proj-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
+.proj-img {
+  aspect-ratio: 4/3; position: relative;
+  overflow: hidden;
+}
+.proj-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.av-ap {
+  position: absolute; top: 8px; left: 8px;
+  background: rgba(14,138,122,0.85); color: #fff;
+  font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 7px; border-radius: 4px;
+  z-index: 2;
+}
+.proj-body { padding: 12px; }
+.proj-title { font-weight: 700; font-size: 13px; margin-bottom: 3px; }
+.proj-meta { font-size: 11px; color: var(--text-secondary); }
+.proj-tag {
+  display: inline-block;
+  background: var(--teal-light); color: var(--teal);
+  font-size: 10px; font-weight: 600;
+  padding: 2px 8px; border-radius: 100px; margin-top: 6px;
+}
+
+/* ─── Garanties / Témoignages ─── */
+#confiance { background: var(--bg); }
+.garanties { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+.garantie-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px 14px; text-align: center;
+}
+.gar-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  margin: 0 auto 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.gar-teal { background: var(--teal-light); }
+.gar-yellow { background: var(--yellow-light); }
+.gar-icon svg { width: 22px; height: 22px; }
+.gar-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+.gar-desc { font-size: 11.5px; color: var(--text-secondary); line-height: 1.45; }
+
+.avis-list { display: flex; flex-direction: column; gap: 14px; }
+.avis-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+}
+.avis-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.avis-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--teal); display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px; color: #fff; flex-shrink: 0;
+}
+.avis-name { font-weight: 700; font-size: 13px; }
+.avis-stars { font-size: 12px; color: var(--yellow); letter-spacing: 1px; }
+.avis-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; font-style: italic; }
+.avis-date { font-size: 11px; color: var(--text-secondary); margin-top: 8px; }
+
+/* ─── Devis ─── */
+#devis { background: var(--surface); }
+.devis-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--teal-light); color: var(--teal);
+  font-size: 11.5px; font-weight: 600; padding: 6px 14px;
+  border-radius: 100px; margin-bottom: 20px;
+}
+.type-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.type-pill {
+  background: var(--bg); border: 1.5px solid var(--border);
+  color: var(--text-secondary); font-size: 12.5px; font-weight: 600;
+  padding: 8px 15px; border-radius: 100px; cursor: pointer; transition: all .15s;
+}
+.type-pill:hover { border-color: var(--teal); color: var(--teal); }
+.type-pill.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+.form-group { margin-bottom: 15px; }
+.form-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+.form-control {
+  width: 100%; background: var(--bg); border: 1.5px solid var(--border);
+  color: var(--text); font-family: inherit; font-size: 14px;
+  padding: 11px 13px; border-radius: var(--radius-sm); outline: none; transition: border-color .15s;
+}
+.form-control::placeholder { color: var(--text-secondary); opacity: 0.7; }
+.form-control:focus { border-color: var(--teal); }
+textarea.form-control { resize: vertical; min-height: 90px; }
+
+.upload-zone {
+  background: var(--bg); border: 2px dashed var(--border);
+  border-radius: var(--radius); padding: 22px 16px; text-align: center;
+  cursor: pointer; transition: border-color .15s, background .15s; margin-bottom: 18px;
+}
+.upload-zone:hover { border-color: var(--teal); background: var(--teal-light); }
+.upload-icon {
+  width: 44px; height: 44px; background: var(--surface);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 10px;
+}
+.upload-text { font-size: 13px; color: var(--text-secondary); }
+.upload-text strong { display: block; color: var(--text); font-weight: 600; margin-bottom: 3px; }
+
+/* ─── Contact ─── */
+#contact { background: var(--bg); }
+.contact-hero {
+  background: linear-gradient(135deg, var(--steel) 0%, #0b2a45 100%);
+  border-radius: 16px; padding: 36px 24px; text-align: center; margin-bottom: 24px;
+}
+.contact-hero-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(20px, 5vw, 26px); color: #fff; margin-bottom: 8px; text-wrap: balance;
+}
+.contact-hero-sub { color: rgba(255,255,255,0.6); font-size: 13.5px; margin-bottom: 20px; }
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #25D366; color: #fff; font-weight: 700; font-size: 15px;
+  padding: 13px 26px; border-radius: var(--radius-sm); transition: background .2s;
+}
+.btn-whatsapp:hover { background: #1ebe5d; }
+
+.info-list { list-style: none; margin-bottom: 20px; }
+.info-item { display: flex; align-items: flex-start; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--border); }
+.info-item:last-child { border-bottom: none; }
+.info-icon {
+  width: 38px; height: 38px; background: var(--steel);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.info-icon svg { color: rgba(255,255,255,0.8); width: 16px; height: 16px; }
+.info-key { font-size: 10.5px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+.info-val { font-size: 14px; font-weight: 500; }
+
+.map-placeholder {
+  background: linear-gradient(135deg, #cdd8e5 0%, #b8c8d8 100%);
+  border-radius: var(--radius); height: 155px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; margin-bottom: 20px;
+}
+.map-label {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  background: #fff; padding: 6px 14px; border-radius: 100px;
+  font-size: 12px; font-weight: 600; box-shadow: var(--shadow); white-space: nowrap; color: var(--text);
+}
+.socials { display: flex; gap: 10px; justify-content: center; padding-top: 16px; }
+.social-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text-secondary); font-size: 12px; font-weight: 600;
+  padding: 8px 14px; border-radius: 100px; cursor: pointer; transition: all .2s;
+}
+.social-btn:hover { border-color: var(--teal); color: var(--teal); }
+.social-btn svg { width: 13px; height: 13px; }
+
+/* ─── Bottom nav ─── */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--steel); border-top: 1px solid var(--steel-border);
+  z-index: 99; padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.bottom-nav-inner { display: flex; max-width: 680px; margin: 0 auto; }
+.nav-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; padding: 10px 4px;
+  color: rgba(255,255,255,0.4); font-size: 9px; font-weight: 600;
+  letter-spacing: 0.3px; cursor: pointer; transition: color .15s; text-decoration: none;
+}
+.nav-item.active { color: var(--teal); }
+.nav-item:hover:not(.active) { color: rgba(255,255,255,0.75); }
+.nav-item svg { width: 19px; height: 19px; }
+
+/* ─── Misc ─── */
+hr { border: none; border-top: 1px solid var(--border); margin: 0; }
+[data-filter-item][hidden] { display: none !important; }
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 20px; }
+.section-head .section-title { margin-bottom: 0; }
+.voir-tout { font-size: 13px; font-weight: 600; color: var(--teal); white-space: nowrap; flex-shrink: 0; margin-left: 12px; }
+.voir-tout:hover { text-decoration: underline; }
+.btn-outline-border {
+  display: flex; width: 100%; align-items: center; justify-content: center;
+  gap: 10px; background: transparent; color: var(--steel);
+  font-weight: 700; font-size: 14px; padding: 13px;
+  border-radius: var(--radius-sm); border: 2px solid var(--steel);
+  transition: all .2s; text-decoration: none;
+}
+.btn-outline-border:hover { background: var(--steel); color: #fff; }
+
+@media (max-width: 400px) {
+  .project-grid, .services-grid, .garanties { grid-template-columns: 1fr; }
+  .hero-btns { flex-direction: column; }
+  .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo.jpg" alt="Top Perfect Service" class="logo-img">
+      <div class="logo-text">
+        <div class="logo-name">Top Perfect Service</div>
+        <div class="logo-sub">Maître Plombier · Lomé</div>
+      </div>
+    </div>
+    <a href="https://wa.me/22871186346?text=Bonjour%2C%20j'ai%20besoin%20d'un%20plombier" class="header-cta" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.847L0 24l6.338-1.491A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.5-5.191-1.373l-.373-.216-3.862.91.982-3.754-.239-.388A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Urgence 24h/7
+    </a>
+  </div>
+</header>
+
+<!-- Urgency banner -->
+<div class="urgency-banner">
+  🔴 Construction bâtiment · Dépannage d'urgence disponible 24h/24 et 7j/7 — Appelez ou écrivez sur WhatsApp
+</div>
+
+<!-- ═══ HERO / ACCUEIL ═══ -->
+<section id="accueil">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Certifié · Lomé, Togo</div>
+    <h1 class="hero-title">Votre plombier de confiance,<br><em>disponible 24h/24</em></h1>
+    <p class="hero-desc">Installation, réparation et entretien de tous vos systèmes de plomberie. Particuliers, entreprises et chantiers. Devis gratuit sous 2h.</p>
+    <div class="hero-btns">
+      <a href="#devis" class="btn-primary">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>
+        Demander un devis
+      </a>
+      <a href="https://wa.me/22871186346?text=Urgence%20plomberie" target="_blank" class="btn-outline">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.847L0 24l6.338-1.491A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.5-5.191-1.373l-.373-.216-3.862.91.982-3.754-.239-.388A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="shortcuts">
+      <a href="#services" class="shortcut">
+        <div class="sc-badge sc-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h1a4 4 0 010 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+        </div>
+        <span class="shortcut-label">Réparation</span>
+      </a>
+      <a href="#services" class="shortcut">
+        <div class="sc-badge sc-steel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="shortcut-label">Installation</span>
+      </a>
+      <a href="#atelier" class="shortcut">
+        <div class="sc-badge sc-steel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <span class="shortcut-label">Atelier</span>
+      </a>
+      <a href="#devis" class="shortcut">
+        <div class="sc-badge sc-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+        </div>
+        <span class="shortcut-label">Devis</span>
+      </a>
+    </div>
+  </div>
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Ans d'expérience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Interventions</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">24h</div>
+        <div class="stat-label">Disponibilité</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2h</div>
+        <div class="stat-label">Délai devis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ URGENCES ═══ -->
+<div style="background: var(--bg); padding: 36px 0 0;">
+  <div class="section-inner">
+    <div class="section-label">Intervention rapide</div>
+    <h2 class="section-title" style="margin-bottom:18px;">Pannes urgentes</h2>
+    <div class="urgent-cards">
+      <div class="urgent-card">
+        <div class="uc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="uc-title">Fuite d'eau</div>
+          <div class="uc-label">⚡ Urgence 24h</div>
+        </div>
+      </div>
+      <div class="urgent-card">
+        <div class="uc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m0 0l-3-3m3 3l3-3M12 22v-6m0 0l-3 3m3-3l3 3M2 12h6m0 0l-3-3m3 3l-3 3m16 0h-6m0 0l3-3m-3 3l3 3"/></svg>
+        </div>
+        <div>
+          <div class="uc-title">Canalisation bouchée</div>
+          <div class="uc-label">⚡ Urgence 24h</div>
+        </div>
+      </div>
+      <div class="urgent-card">
+        <div class="uc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16.5c0 1.93 2.24 3.5 5 3.5s5-1.57 5-3.5-2.24-3.5-5-3.5-5 1.57-5 3.5z"/><path d="M12 13V7M9 4c0-1.1.9-2 2-2h2a2 2 0 012 2v3H9V4z"/></svg>
+        </div>
+        <div>
+          <div class="uc-title">WC bouché</div>
+          <div class="uc-label">⚡ Urgence 24h</div>
+        </div>
+      </div>
+      <div class="urgent-card">
+        <div class="uc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <div class="uc-title">Panne chauffe-eau</div>
+          <div class="uc-label">⚡ Urgence 24h</div>
+        </div>
+      </div>
+    </div>
+    <a href="https://wa.me/22871186346?text=URGENCE%20plomberie%20-%20j'ai%20besoin%20d'aide" target="_blank" class="btn-full" style="background: var(--red);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+      Appeler pour une urgence
+    </a>
+  </div>
+</div>
+
+<hr style="margin-top:36px;">
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="section">
+  <div class="section-inner">
+    <div class="section-label">Nos prestations</div>
+    <h2 class="section-title">Tous nos services</h2>
+    <p class="section-sub">Du robinet qui fuit au chantier complet, nous intervenons partout à Lomé et environs.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="svc-icon svc-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="svc-title">Réparation & Dépannage</div>
+        <p class="svc-desc">Fuite, robinet cassé, canalisation bouchée. Intervention rapide chez vous.</p>
+        <a href="#devis" class="svc-link">Demander</a>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon svc-steel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="svc-title">Installation sanitaire</div>
+        <p class="svc-desc">Pose de douche, baignoire, WC, lavabo, évier. Neuf ou remplacement.</p>
+        <a href="#devis" class="svc-link">Demander</a>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon svc-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m6-4l-6 6M4 6l8 2M2 12h6m4 0h10M12 12v10"/></svg>
+        </div>
+        <div class="svc-title">Réseau & Tuyauterie</div>
+        <p class="svc-desc">Pose et remplacement de tuyaux, raccordements, réseau eau chaude/froide.</p>
+        <a href="#devis" class="svc-link">Demander</a>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon svc-yellow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <div class="svc-title">Chauffe-eau & Pompe</div>
+        <p class="svc-desc">Installation et entretien de chauffe-eau, pompes de relevage et surpresseurs.</p>
+        <a href="#devis" class="svc-link">Demander</a>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon svc-steel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M9 9h6v6H9z"/><path d="M3 9h6M15 9h6M3 15h6M15 15h6M9 3v6M9 15v6M15 3v6M15 15v6"/></svg>
+        </div>
+        <div class="svc-title">Fosse & Assainissement</div>
+        <p class="svc-desc">Vidange de fosse septique, curage de canalisation, traitement des eaux. Création de fosses biophiles et septiques.</p>
+        <a href="#devis" class="svc-link">Demander</a>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon svc-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16.1A5 5 0 015.5 9a5.003 5.003 0 019.5-1.02A5.5 5.5 0 1117.5 17H3a3 3 0 01-1-5.9"/></svg>
+        </div>
+        <div class="svc-title">Chantiers & Projets neufs</div>
+        <p class="svc-desc">Plomberie complète pour constructions neuves, villas, immeubles et bureaux.</p>
+        <a href="#devis" class="svc-link">Demander</a>
+      </div>
+    </div>
+    <a href="#devis" class="btn-full">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+      Demander un devis gratuit
+    </a>
+  </div>
+</section>
+
+<hr>
+
+<!-- ═══ ATELIER ═══ -->
+<section id="atelier" class="section">
+  <div class="section-inner">
+    <div class="section-label">Notre atelier</div>
+    <h2 class="section-title">Un atelier équipé pour vous servir</h2>
+    <p class="section-sub">Basé à Lomé, notre atelier dispose du matériel et des pièces pour intervenir rapidement.</p>
+    <div class="atelier-hero">
+      <div class="atelier-label">Top Perfect Service · Lomé, Togo</div>
+      <h3 class="atelier-title">Stock de pièces disponibles,<br>interventions sans délai</h3>
+      <ul class="atelier-features">
+        <li>Pièces de rechange en stock : robinetterie, joints, tuyaux PVC et PER</li>
+        <li>Outillage professionnel complet : déboucheur haute pression et équipements spécialisés</li>
+      </ul>
+    </div>
+    <div class="atelier-grid">
+      <div class="atelier-card">
+        <div class="at-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div>
+          <div class="at-title">Réparation sur place</div>
+          <div class="at-desc">Soudure, sertissage, fabrication de pièces spéciales à l'atelier.</div>
+        </div>
+      </div>
+      <div class="atelier-card">
+        <div class="at-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="at-title">Garantie sur travaux</div>
+          <div class="at-desc">Tous nos travaux sont garantis pièces et main d'œuvre.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ═══ RÉALISATIONS ═══ -->
+<section id="realisations" class="section">
+  <div class="section-inner">
+    <div class="section-label">Notre portfolio</div>
+    <h2 class="section-title">Réalisations</h2>
+    <div class="filter-bar">
+      <button class="pill active" onclick="filterItems('real-grid', this, 'tous')">Tout</button>
+      <button class="pill" onclick="filterItems('real-grid', this, 'reparation')">Réparation</button>
+      <button class="pill" onclick="filterItems('real-grid', this, 'installation')">Installation</button>
+      <button class="pill" onclick="filterItems('real-grid', this, 'chantier')">Chantier</button>
+      <span class="filter-count" id="real-count">6 travaux</span>
+    </div>
+    <div class="project-grid" id="real-grid">
+
+      <div class="proj-card" data-filter-item data-cat="reparation">
+        <div class="proj-img">
+          <div class="av-ap">En cours</div>
+          <img src="fuite-reparation.jpg" alt="Réparation fuite canalisation">
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Fuite canalisation principale</div>
+          <div class="proj-meta">Lomé · 2026</div>
+          <div class="proj-tag">Réparation</div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-filter-item data-cat="reparation">
+        <div class="proj-img">
+          <div class="av-ap">Après</div>
+          <img src="apres-tuyaux-ppr.jpg" alt="Après - tuyaux PPR installés">
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Réseau PPR remis à neuf</div>
+          <div class="proj-meta">Lomé · 2026</div>
+          <div class="proj-tag">Réparation</div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-filter-item data-cat="installation">
+        <div class="proj-img">
+          <div class="av-ap">Avant</div>
+          <img src="avant-salle-de-bain.jpg" alt="Avant - pièce brute">
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Salle de bain complète</div>
+          <div class="proj-meta">Lomé · 2025</div>
+          <div class="proj-tag">Installation</div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-filter-item data-cat="installation">
+        <div class="proj-img">
+          <div class="av-ap">Après</div>
+          <img src="apres-salle-de-bain.jpg" alt="Après - salle de bain terminée">
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Salle de bain terminée</div>
+          <div class="proj-meta">Lomé · 2025</div>
+          <div class="proj-tag">Installation</div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-filter-item data-cat="chantier">
+        <div class="proj-img">
+          <div class="av-ap">Avant</div>
+          <img src="avant-chantier.jpg" alt="Avant - gros oeuvre sans plomberie">
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Plomberie villa R+1</div>
+          <div class="proj-meta">Lomé · 2025</div>
+          <div class="proj-tag">Chantier</div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-filter-item data-cat="chantier">
+        <div class="proj-img">
+          <div class="av-ap">Après</div>
+          <img src="apres-tuyaux-ppr.jpg" alt="Après - réseau complet installé">
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Réseau immeuble R+2</div>
+          <div class="proj-meta">Lomé · 2024</div>
+          <div class="proj-tag">Chantier</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ═══ CONFIANCE & AVIS ═══ -->
+<section id="confiance" class="section">
+  <div class="section-inner">
+    <div class="section-label">Pourquoi nous choisir</div>
+    <h2 class="section-title">Votre satisfaction, notre priorité</h2>
+    <p class="section-sub">Une réputation bâtie sur la qualité, la ponctualité et la transparence des tarifs.</p>
+    <div class="garanties">
+      <div class="garantie-card">
+        <div class="gar-icon gar-teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="gar-title">Travail garanti</div>
+        <div class="gar-desc">Garantie pièces et main d'œuvre sur toutes nos interventions.</div>
+      </div>
+      <div class="garantie-card">
+        <div class="gar-icon gar-yellow">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="gar-title">Ponctualité</div>
+        <div class="gar-desc">Nous respectons les rendez-vous et les délais annoncés.</div>
+      </div>
+      <div class="garantie-card">
+        <div class="gar-icon gar-teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="gar-title">Tarifs transparents</div>
+        <div class="gar-desc">Devis détaillé avant toute intervention, sans mauvaise surprise.</div>
+      </div>
+      <div class="garantie-card">
+        <div class="gar-icon gar-yellow">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="gar-title">Équipe qualifiée</div>
+        <div class="gar-desc">Plombiers certifiés avec plus de 12 ans d'expérience terrain.</div>
+      </div>
+    </div>
+    <div class="section-label" style="margin-bottom:12px;">Ce que disent nos clients</div>
+    <div class="avis-list">
+      <div class="avis-card">
+        <div class="avis-header">
+          <div class="avis-avatar">K</div>
+          <div>
+            <div class="avis-name">Kwamé A.</div>
+            <div class="avis-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="avis-text">« Fuite réparée en moins d'une heure, même le soir. Sérieux, propre et prix raisonnable. Je recommande vraiment ! »</div>
+        <div class="avis-date">Il y a 2 semaines · Lomé</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-header">
+          <div class="avis-avatar" style="background: var(--steel);">F</div>
+          <div>
+            <div class="avis-name">Fatou D.</div>
+            <div class="avis-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="avis-text">« Toute la plomberie de ma villa neuve. Travail soigné, délais respectés et bon suivi après chantier. »</div>
+        <div class="avis-date">Il y a 1 mois · Lomé</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ═══ DEVIS ═══ -->
+<section id="devis" class="section">
+  <div class="section-inner">
+    <div class="section-label">Gratuit · Sous 2h</div>
+    <h2 class="section-title">Demander un devis</h2>
+    <div class="devis-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Réponse garantie sous 2h
+    </div>
+    <div class="type-pills">
+      <button class="type-pill active" onclick="selectType(this)">Réparation</button>
+      <button class="type-pill" onclick="selectType(this)">Installation</button>
+      <button class="type-pill" onclick="selectType(this)">Chantier neuf</button>
+      <button class="type-pill" onclick="selectType(this)">Urgence</button>
+    </div>
+    <form id="devis-form" onsubmit="sendDevis(event)">
+      <div class="form-group">
+        <label class="form-label" for="nom">Nom complet *</label>
+        <input class="form-control" type="text" id="nom" placeholder="Ex: Kofi Mensah" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="tel">Téléphone *</label>
+        <input class="form-control" type="tel" id="tel" placeholder="+228 XX XX XX XX" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="adresse">Adresse / Quartier</label>
+        <input class="form-control" type="text" id="adresse" placeholder="Ex: Tokoin, Lomé">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="projet">Décrivez votre problème *</label>
+        <textarea class="form-control" id="projet" rows="4" placeholder="Ex: J'ai une fuite sous l'évier de ma cuisine depuis ce matin, l'eau coule en permanence…" required></textarea>
+      </div>
+      <div class="upload-zone" onclick="document.getElementById('file-upload').click()">
+        <div class="upload-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <div class="upload-text">
+          <strong>Joindre une photo du problème</strong>
+          Facultatif · JPG, PNG — aide au diagnostic
+        </div>
+        <input type="file" id="file-upload" accept=".jpg,.jpeg,.png" multiple style="display:none">
+      </div>
+      <button type="submit" class="btn-full">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.847L0 24l6.338-1.491A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.5-5.191-1.373l-.373-.216-3.862.91.982-3.754-.239-.388A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Envoyer sur WhatsApp
+      </button>
+    </form>
+  </div>
+</section>
+
+<hr>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="contact-hero">
+      <h2 class="contact-hero-title">Un problème ? Appelez-nous maintenant</h2>
+      <p class="contact-hero-sub">Disponibles 24h/24, 7j/7 pour les urgences. Devis gratuit en journée.</p>
+      <a href="https://wa.me/22871186346" target="_blank" class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.847L0 24l6.338-1.491A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.5-5.191-1.373l-.373-.216-3.862.91.982-3.754-.239-.388A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Écrire sur WhatsApp
+      </a>
+    </div>
+    <ul class="info-list">
+      <li class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+        </div>
+        <div>
+          <div class="info-key">Téléphone / WhatsApp</div>
+          <div class="info-val">+228 71 18 63 46</div>
+        </div>
+      </li>
+      <li class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="info-key">Atelier</div>
+          <div class="info-val">Lomé, Togo</div>
+        </div>
+      </li>
+      <li class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="info-key">Horaires</div>
+          <div class="info-val">Lun – Sam 7h30 – 18h · Urgences 24h/24</div>
+        </div>
+      </li>
+      <li class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="info-key">Email</div>
+          <div class="info-val">top.perfect.service@gmail.com</div>
+        </div>
+      </li>
+    </ul>
+    <div style="border-radius: var(--radius); overflow: hidden; margin-bottom: 20px; border: 1px solid var(--border);">
+      <img src="map-screenshot.jpg" alt="Localisation atelier Top Perfect Service" style="width:100%; display:block; max-height:220px; object-fit:cover; object-position: center top;">
+    </div>
+    <a href="https://maps.app.goo.gl/Jix39wbVgtirJNu5A" target="_blank" class="btn-outline-border" style="margin-bottom:20px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Voir l'atelier sur Google Maps
+    </a>
+    <div class="socials">
+      <button class="social-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Facebook
+      </button>
+      <button class="social-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </button>
+      <button class="social-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.847L0 24l6.338-1.491A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.5-5.191-1.373l-.373-.216-3.862.91.982-3.754-.239-.388A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOTTOM NAV ═══ -->
+<nav class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <a href="#accueil" class="nav-item active" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Accueil
+    </a>
+    <a href="#services" class="nav-item" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+      Services
+    </a>
+    <a href="#realisations" class="nav-item" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      Travaux
+    </a>
+    <a href="#devis" class="nav-item" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+      Devis
+    </a>
+    <a href="#contact" class="nav-item" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81"/><path d="M1 1l22 22"/></svg>
+      Contact
+    </a>
+  </div>
+</nav>
+
+<script>
+function filterItems(gridId, btn, cat) {
+  btn.closest('.filter-bar').querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const grid = document.getElementById(gridId);
+  let visible = 0;
+  grid.querySelectorAll('[data-filter-item]').forEach(item => {
+    const match = cat === 'tous' || item.dataset.cat === cat;
+    item.hidden = !match;
+    if (match) visible++;
+  });
+  const countEl = document.getElementById('real-count');
+  if (countEl) countEl.textContent = visible + (visible === 1 ? ' travail' : ' travaux');
+}
+
+function selectType(btn) {
+  btn.closest('.type-pills').querySelectorAll('.type-pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function setNav(el) {
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  el.classList.add('active');
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const map = { accueil: 0, services: 1, atelier: 2, realisations: 2, confiance: 2, devis: 3, contact: 4 };
+    const idx = map[entry.target.id];
+    if (idx !== undefined) {
+      const items = document.querySelectorAll('.nav-item');
+      items.forEach(n => n.classList.remove('active'));
+      if (items[idx]) items[idx].classList.add('active');
+    }
+  });
+}, { threshold: 0.35 });
+
+document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+
+function sendDevis(e) {
+  e.preventDefault();
+  const nom = document.getElementById('nom').value.trim();
+  const tel = document.getElementById('tel').value.trim();
+  const adresse = document.getElementById('adresse').value.trim();
+  const projet = document.getElementById('projet').value.trim();
+  const type = document.querySelector('.type-pill.active')?.textContent || 'Réparation';
+  const msg = encodeURIComponent(
+    'Bonjour Maître Plombier\n\n' +
+    '*Type :* ' + type + '\n' +
+    '*Nom :* ' + nom + '\n' +
+    '*Téléphone :* ' + tel + '\n' +
+    (adresse ? '*Adresse :* ' + adresse + '\n' : '') +
+    '\n*Problème :*\n' + projet + '\n\n' +
+    '_(Message depuis le site web)_'
+  );
+  window.open('https://wa.me/22871186346?text=' + msg, '_blank');
+}
+</script>
+</body>
+</html>
